@@ -1,3 +1,8 @@
+/* Importa los estilos base de Tailwind (reset, tipografía, etc) */
 @tailwind base;
+/* Componentes prediseñados (botones, formularios, etc) */
 @tailwind components;
+/* Utilidades como flex, grid, paddings, colores, etc */
 @tailwind utilities;
+
+/* (Opcional) Tus estilos personalizados debajo */
