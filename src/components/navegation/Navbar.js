@@ -23,11 +23,11 @@ function Navbar() {
 
                     {/* Enlaces de navegación */}
                     <div className="hidden md:flex items-center space-x-6">
-                        <Link to="/venta" className="text-xs text-gray-700 hover:text-black">Puntos de venta</Link>
-                        <Link to="/nosotros" className="text-xs text-gray-700 hover:text-black">Sobre nosotros</Link>
+                        <Link to="/puntos-de-venta" className="text-xs text-gray-700 hover:text-black">Puntos de venta</Link>
+                        <Link to="/sobre-nosotros" className="text-xs text-gray-700 hover:text-black">Sobre nosotros</Link>
                         <Link to="/distribuidores" className="text-xs text-gray-700 hover:text-black">Distribuidores</Link>
                         <Link to="/contacto" className="text-xs text-gray-700 hover:text-black">Contacto</Link>
-                        <Link to="/socios" className="text-xs text-gray-700 hover:text-black">Portal de Socios</Link>
+                        <Link to="/portal-de-socios" className="text-xs text-gray-700 hover:text-black">Portal de Socios</Link>
                     </div>
                 </div>
             </div>

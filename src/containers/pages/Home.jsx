@@ -6,11 +6,12 @@ function Home() {
     return (
     <Layout>
         <Navbar />
-        <div classname= "pt-28">
+        <div className= "pt-28">
             <h1>Hola Mundo!</h1>
         </div>
         <Footer />
     </Layout>
+    
     );
 }
 export default Home;

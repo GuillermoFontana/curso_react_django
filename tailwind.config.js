@@ -4,7 +4,9 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      'footer-bg': 'rgb(192, 183, 176)',
+    },
   },
   plugins: [],
 }

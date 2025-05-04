@@ -2,15 +2,15 @@ import Footer from "components/navegation/Footer";
 import Navbar from "components/navegation/Navbar";
 import Layout from "hocs/layouts/Layout";
 
-function Nosotros() {
+function Distributors() {
     return (
     <Layout>
-        <Navbar />
-        <div classname= "pt-28">
-            <h1>Nosotros!</h1>
+        <Navbar/>
+        <div className= "pt-28">
+            <h1>Distribuidores!</h1>
         </div>
-        <Footer />
+        <Footer/>
     </Layout>
     );
 }
-export default Nosotros;
+export default Distributors;

@@ -2,15 +2,15 @@ import Footer from "components/navegation/Footer";
 import Navbar from "components/navegation/Navbar";
 import Layout from "hocs/layouts/Layout";
 
-function Socios() {
+function Partners() {
     return (
     <Layout>
         <Navbar />
-        <div classname= "pt-28">
+        <div className= "pt-28">
             <h1>Socios!</h1>
         </div>
         <Footer />
     </Layout>
     );
 }
-export default Socios;
+export default Partners;
