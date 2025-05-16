@@ -5,7 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      "footer-bg": 'rgb(192, 183, 176)',
+      colors: {
+        gold: '#D4AF37',
+      },
     },
   },
   plugins: [

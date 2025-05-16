@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Layout from "hocs/layouts/Layout";
 import { motion } from "framer-motion";
 import { InView } from "react-intersection-observer";
-import { FaFacebookSquare, FaInstagram } from "react-icons/fa";
+import whatsapp from "../../assets/icons/whatsapp.png";
+import instagram from "../../assets/icons/instagram.png";
 import arrowDownVideo from "assets/icons/arrow-down.png"; // Import directo
 import Comedor from "assets/img/home-comedor.jpg"
 import Oficina from "assets/img/home-oficina.jpg"
@@ -24,32 +25,32 @@ function Home() {
     ];
     return (
         <Layout>
-            <section id="main-slider" className="relative w-full h-screen overflow-hidden">
-{/* Video Background */}
-<video 
-    src={HomeDesign}
-    autoPlay 
-    loop 
-    muted 
-    playsInline 
-    className="absolute inset-0 w-full h-full object-cover z-0"
-    style={{ 
-        objectPosition: "center 70%", // Ajusta la posición del video (center, top, bottom, left, right)
-        width: "100%",           // Ancho del video (puedes cambiar a un valor fijo como "1200px")
-        height: "100vh",         // Alto del video (puedes cambiar a un valor fijo)
-    }}
-    onError={(e) => {
-        e.target.style.display = "none"; // Oculta el video si no se carga
-        document.getElementById("fallback-bg").style.display = "block";
-    }}
-/>
-
-{/* Background Image (Fallback if Video Fails) */}
-<div 
-    id="fallback-bg"
-    className="absolute inset-0 hidden md:block bg-cover bg-center z-0" 
-    style={{ backgroundImage: ""}} 
-/>
+            <section id="main-slider" className="relative w-full h-[600px] overflow-hidden">
+                {/* Video Background */}
+                <video 
+                    src={HomeDesign}
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline 
+                    className="absolute inset-0 w-full h-full object-cover z-0"
+                    style={{ 
+                        objectPosition: "center 70%", // Ajusta la posición del video (center, top, bottom, left, right)
+                        width: "100%",           // Ancho del video (puedes cambiar a un valor fijo como "1200px")
+                        height: "100vh",         // Alto del video (puedes cambiar a un valor fijo)
+                    }}
+                    onError={(e) => {
+                        e.target.style.display = "none"; // Oculta el video si no se carga
+                        document.getElementById("fallback-bg").style.display = "block";
+                    }}
+                />
+                
+                {/* Background Image (Fallback if Video Fails) */}
+                <div 
+                    id="fallback-bg"
+                    className="absolute inset-0 hidden md:block bg-cover bg-center z-0" 
+                    style={{ backgroundImage: ""}} 
+                />
 
                 {/* Slider Content */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-black z-10">
@@ -85,38 +86,38 @@ function Home() {
                     <div className="flex space-x-20 mt-2">
                         <div className="relative group flex items-center">
                             <a 
-                                href="https://www.facebook.com/Fontenla.furniture/" 
+                                href="https://wa.me/542213522513" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="text-base hover:text-primary transition-transform transform group-hover:-translate-x-16"
+                                className="text-base hover:text-primary transition-transform transform group-hover:-translate-x-20"
                             >
-                                <FaFacebookSquare />
+                                <img src={whatsapp} alt="WhatsApp" className="w-6 h-6" />
                             </a>
                             <a 
-                                href="https://www.facebook.com/Fontenla.furniture/" 
+                                href="https://wa.me/542213522513" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
                                 className="absolute text-sm opacity-0 group-hover:opacity-100 transition duration-300 transform group-hover:-translate-x-16 -translate-x-20 ml-6"
                             >
-                                Facebook
+                                Whatsapp
                                 <span className="block w-0 group-hover:w-full h-[1px] bg-black transition-all duration-300"></span>
                             </a>
                         </div>
                         
                         <div className="relative group flex items-center">
                             <a 
-                                href="https://www.instagram.com/fontenla_furniture" 
+                                href="https://www.instagram.com/" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
                                 className="text-base hover:text-primary transition-transform transform group-hover:-translate-x-16"
                             >
-                                <FaInstagram />
+                                <img src={instagram} alt="WhatsApp" className="w-6 h-6" />
                             </a>
                             <a 
-                                href="https://www.instagram.com/fontenla_furniture" 
+                                href="https://www.instagram.com/" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="absolute text-sm opacity-0 group-hover:opacity-100 transition duration-300 transform group-hover:-translate-x-16 -translate-x-20 ml-6"
+                                className="absolute text-sm opacity-0 group-hover:opacity-100 transition duration-300 transform group-hover:-translate-x-12 -translate-x-20 ml-6"
                             >
                                 Instagram
                                 <span className="block w-0 group-hover:w-full h-[1px] bg-black transition-all duration-300"></span>
@@ -127,33 +128,36 @@ function Home() {
                 
                 {/* Scroll Down */}
                 <motion.div 
-                    className="absolute top-60 right-4 flex flex-col items-center justify-center space-y-2 cursor-pointer text-black z-20"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-                >
-                    <span 
-                        className="text-xs tracking-[0.3em] transform -rotate-90 origin-center mb-20"
-                    >
-                        SCROLL DOWN
-                    </span>
-                    <motion.img 
-                        src={arrowDownVideo} 
-                        alt="Scroll Down" 
-                        className="w-14 h-14 object-contain mt-2 filter invert"
-                        animate={{
-                            y: [0, 30],
-                            opacity: [1, 0],
-                        }}
-                        transition={{
-                            repeat: Infinity,
-                            repeatType: "loop",
-                            duration: 1.5,
-                            ease: "easeInOut",
-                        }}
-                    />
-                </motion.div>
+    className="absolute top-60 right-4 flex flex-col items-center justify-center space-y-2 cursor-pointer text-black z-20 group"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: 0.3 }}
+    onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+>
+    <motion.span 
+        className="text-sm md:text-base font-bold tracking-[0.35em] transform -rotate-90 origin-center mb-20 text-black group-hover:text-gray-100 transition-colors duration-300" 
+        style={{ textShadow: "2px 2px 3px rgba(0, 0, 0, 0.8)" }}
+        animate={{ opacity: [1, 0.5, 1] }}
+        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+    >
+        SCROLL DOWN
+    </motion.span>
+    <motion.img 
+        src={arrowDownVideo} 
+        alt="Scroll Down" 
+        className="w-16 h-16 object-contain mt-2 filter invert transition-transform duration-300 group-hover:scale-110"
+        animate={{
+            y: [0, 30],
+            opacity: [1, 0],
+        }}
+        transition={{
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 1.5,
+            ease: "easeInOut",
+        }}
+    />
+</motion.div>
             </section>
             <section id="home-about" className="relative overflow-hidden">
                 <div className="container mx-auto py-16 px-4">
@@ -242,12 +246,12 @@ function Home() {
                             backgroundPosition: category.id === "01" ? "center 70%" :
                             category.id === "02" ? "center 78%" :
                             category.id === "03" ? "center 70%" :
-                            category.id === "04" ? "center 60%" :
+                            category.id === "04" ? "center 70%" :
                             category.id === "05" ? "center 75%" : "center",
                         }}>
                         </div>
                     ))}
-                    <div className="relative z-10 flex flex-col items-start justify-center h-full px-8 md:px-16 space-y-4 text-gray-200">
+                    <div className="relative z-10 flex flex-col items-start justify-center h-full px-8 md:px-16 space-y-4 text-gray-100"  style={{textShadow: "2px 2px 3px rgba(0, 0, 0, 0.8)"}}>
                         <div className="flex justify-between w-full max-w-4xl mx-auto">
                             {categories.map((category) => (
                                 <motion.a
