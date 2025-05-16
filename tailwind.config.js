@@ -5,8 +5,18 @@ module.exports = {
   ],
   theme: {
     extend: {
-      'footer-bg': 'rgb(192, 183, 176)',
+      "footer-bg": 'rgb(192, 183, 176)',
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const extendUnderline = {
+        ".underline": {
+          'textDecoration': "underline",
+          'text-decoration-color': "rgb(192, 183, 176)",
+        },
+      }
+      addUtilities(extendUnderline);
+    }
+  ],
 }

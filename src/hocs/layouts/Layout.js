@@ -1,11 +1,21 @@
+import Navbar from 'components/navegation/Navbar';
+import Footer from 'components/navegation/Footer'; // Ajustá la ruta si no es correcta
 import { connect } from 'react-redux';
 
 
 function Layout({ children }) {
     return (
-        <div>
+        <div className="flex flex-col min-h-screen">
+        <header>
+            <Navbar />
+        </header>
+
+        <main className="flex-grow">
             {children}
-        </div>     
+        </main>
+
+        <Footer />
+    </div>
     );
 }
 

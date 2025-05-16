@@ -6,3 +6,6 @@
 @tailwind utilities;
 
 /* (Opcional) Tus estilos personalizados debajo */
+.active{
+    @apply border-orange-800;
+}

@@ -9,17 +9,16 @@ import tiktok from "../../assets/icons/tiktok.png";
 const navigation = {
     company: [
         { name: "Acerca de Bold-craft Design", href: "/nosotros" },
+        { name: "Localizador de tiendas", href: "/localizador-de-tiendas" },
         { name: "Carreras", href: "/carreras" },
-        { name: "Contacto", href: "/contacto" },
         { name: "Política de cookies", href: "/politica-de-cookies" },       
-        { name: "Nuestra responsabilidad", href: "/nuestra-responsabilidad" },
+        { name: "Nuestra responsabilidad", href: "/nuestra-responsabilidad" },   
     ],
     customerService: [
-        { name: "Localizador de tiendas", href: "/localizador-de-tiendas" },
+        { name: "Contacto", href: "/contacto" },
         { name: "Política de envíos", href: "/shipping-policy" },
         { name: "Política de devoluciones", href: "/return-policy" },
         { name: "Términos y condiciones", href: "/terms-and-conditions" },
-        { name: "Instrucciones de cuidado", href: "https://presscloud.com/file/65/655477028398859/Audo_Cph_Care_Instructions.pdf" },
         { name: "Política de privacidad", href: "/privacy-policy" },
     ],
     professionals: [
@@ -33,11 +32,11 @@ const navigation = {
         subscribeHref: "/portal-de-socios",
         social: [
             { name: "WhatsApp", href: "https://wa.me/5492213522513" },
-            { name: "YouTube", href: "https://www.youtube.com/yourchannel" },
-            { name: "TikTok", href: "https://www.tiktok.com/@yourprofile" },
-            { name: "Facebook", href: "https://www.facebook.com/audocph" },
-            { name: "Instagram", href: "https://www.instagram.com/audocph" },
-            { name: "Pinterest", href: "https://www.pinterest.com/audocph" },
+            { name: "YouTube", href: "https://www.youtube.com/" },
+            { name: "TikTok", href: "https://www.tiktok.com/@" },
+            { name: "Facebook", href: "https://www.facebook.com/" },
+            { name: "Instagram", href: "https://www.instagram.com/" },
+            { name: "Pinterest", href: "https://www.pinterest.com/" },
         ],
     },
 };
@@ -59,7 +58,7 @@ function Footer() {
                     <ul className="space-y-2 text-xs">
                         {navigation.company.map((item, idx) => (
                             <li key={idx}>
-                                <a href={item.href} className="text-sm hover:underline">{item.name}</a>
+                                <a href={item.href} className="text-xs text-gray-800 hover:text-black transition-transform duration-200 hover:scale-[1.03] inline-block">{item.name}</a>
                             </li>
                         ))}
                     </ul>
@@ -71,7 +70,7 @@ function Footer() {
                     <ul className="space-y-2 text-xs">
                         {navigation.customerService.map((item, idx) => (
                             <li key={idx}>
-                                <a href={item.href} className="text-sm hover:underline">{item.name}</a>
+                                <a href={item.href} className="text-xs text-gray-800 hover:text-black transition-transform duration-200 hover:scale-[1.03] inline-block">{item.name}</a>
                             </li>
                         ))}
                     </ul>
@@ -80,10 +79,10 @@ function Footer() {
                 {/* Sección: Profesionales */}
                 <div>
                     <h2 className="text-lg font-semibold mb-4">Profesionales</h2>
-                    <ul className="space-y-2 text-xs">
+                    <ul className="space-y-2 text-xs ">
                         {navigation.professionals.map((item, idx) => (
                             <li key={idx}>
-                                <a href={item.href} className="text-sm hover:underline">{item.name}</a>
+                                <a href={item.href} className="text-xs text-gray-800 hover:text-black transition-transform duration-200 hover:scale-[1.03] inline-block">{item.name}</a>
                             </li>
                         ))}
                     </ul>
@@ -92,8 +91,8 @@ function Footer() {
                 {/* Sección: Newsletter + redes */}
                 <div>
                     <h2 className="text-lg font-semibold mb-4">Hoja informativa</h2>
-                    <p className="text-sm mb-4">{navigation.newsletter.text}</p>
-                    <a href={navigation.newsletter.subscribeHref} className="button inline-block bg-black text-white px-16 py-2 rounded transition-transform duration-200 ease-in-out hover:scale-110">
+                    <p className="text-sm text-gray-800 mb-4">{navigation.newsletter.text}</p>
+                    <a href={navigation.newsletter.subscribeHref} className="button inline-block bg-black text-white px-16 py-2 rounded transition-transform duration-200 hover:scale-[1.03] ">
                         Suscribir
                     </a>
                     <div className="flex gap-4 mt-5">
