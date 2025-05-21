@@ -11,6 +11,7 @@ import Living from "assets/img/home-living.jpg"
 import Diseño from "assets/img/home-diseño.jpg"
 import Exterior from "assets/img/home-exterior.jpg"
 import Dormitorio from "assets/img/home-dormitorio.jpg"
+import Estar from "assets/img/home-sala-de-estar.jpg"
 import HomeDesign from  "assets/video/home.mp4"
 
 function Home() {
@@ -53,32 +54,41 @@ function Home() {
                 />
 
                 {/* Slider Content */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-black z-10">
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10">
                     <motion.div 
                         className="text-center space-y-2"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                        <h2 className="text-sm tracking-[0.3em]">AUTHENTIC LUXURY</h2>
-                        <h1 className="text-6xl font-bold tracking-[0.3em]">MASTERPIECES</h1>
+                        <h2 
+                        className="text-sm font-light italic tracking-[0.3em]" 
+                        style={{
+                            fontFamily: 'Playfair Display',
+                            textShadow: '2px 4px 6px rgba(0,0,0,0.99)'
+                        }}>
+                            AUTÉNTICO LUJO
+                        </h2>
+                        <h1 className="text-6xl font-light italic tracking-[0.3em]" style={{ fontFamily: 'Playfair Display', textShadow: '2px 4px 6px rgba(0,0,0,0.99)'}}>
+                            PIEZAS MAESTRAS
+                        </h1>
                     </motion.div>
                 </div>
 
                 {/* Social Media Links */}
                 <motion.div 
-                    className="absolute bottom-8 left-8 text-black space-y-0 z-20"
+                    className="absolute bottom-8 left-8 text-white space-y-0 z-20"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <div className="text-xs text-left">2025 © Bold-craft Design.<br />
-                        All rights reserved.
+                    <div className="text-xs text-left font-light italic">2025 © Bold-craft Design.<br />
+                    Todos los derechos reservados.
                     </div>                    
                 </motion.div>
 
                 <motion.div 
-                    className="absolute bottom-8 right-16 text-black z-20"
+                    className="absolute bottom-8 right-16 text-white font-light italic z-20"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
@@ -89,18 +99,23 @@ function Home() {
                                 href="https://wa.me/542213522513" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="text-base hover:text-primary transition-transform transform group-hover:-translate-x-20"
+                                className="text-base transition-transform transform group-hover:-translate-x-20"
                             >
-                                <img src={whatsapp} alt="WhatsApp" className="w-6 h-6" />
+                                <img 
+                                    src={whatsapp} 
+                                    alt="WhatsApp" 
+                                    className="w-6 h-6 object-contain mt-2 filter invert sepia brightness-200 contrast-200"
+                                />
                             </a>
                             <a 
                                 href="https://wa.me/542213522513" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="absolute text-sm opacity-0 group-hover:opacity-100 transition duration-300 transform group-hover:-translate-x-16 -translate-x-20 ml-6"
+                                className="absolute text-sm font-bold opacity-0 group-hover:opacity-100 transition duration-300 transform group-hover:-translate-x-16 -translate-x-20 ml-6 text-white group-hover:text-white"
+                                style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 1)" }}
                             >
                                 Whatsapp
-                                <span className="block w-0 group-hover:w-full h-[1px] bg-black transition-all duration-300"></span>
+                                <span className="block w-0 group-hover:w-full h-[1px] bg-white transition-all duration-300"></span>
                             </a>
                         </div>
                         
@@ -109,55 +124,58 @@ function Home() {
                                 href="https://www.instagram.com/" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="text-base hover:text-primary transition-transform transform group-hover:-translate-x-16"
+                                className="text-base transition-transform transform group-hover:-translate-x-16"
                             >
-                                <img src={instagram} alt="WhatsApp" className="w-6 h-6" />
+                                <img 
+                                    src={instagram} 
+                                    alt="Instagram" 
+                                    className="w-6 h-6 object-contain mt-2 filter invert sepia brightness-200 contrast-200"
+                                />
                             </a>
                             <a 
                                 href="https://www.instagram.com/" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="absolute text-sm opacity-0 group-hover:opacity-100 transition duration-300 transform group-hover:-translate-x-12 -translate-x-20 ml-6"
+                                className="absolute text-sm font-bold opacity-0 group-hover:opacity-100 transition duration-300 transform group-hover:-translate-x-12 -translate-x-20 ml-6 text-white group-hover:text-white"
+                                style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 1)" }}
                             >
                                 Instagram
-                                <span className="block w-0 group-hover:w-full h-[1px] bg-black transition-all duration-300"></span>
+                                <span className="block w-0 group-hover:w-full h-[1px] bg-white transition-all duration-300"></span>
                             </a>
                         </div>
                     </div>
                 </motion.div>
-                
                 {/* Scroll Down */}
                 <motion.div 
-    className="absolute top-60 right-4 flex flex-col items-center justify-center space-y-2 cursor-pointer text-black z-20 group"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: 0.3 }}
-    onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
->
-    <motion.span 
-        className="text-sm md:text-base font-bold tracking-[0.35em] transform -rotate-90 origin-center mb-20 text-black group-hover:text-gray-100 transition-colors duration-300" 
-        style={{ textShadow: "2px 2px 3px rgba(0, 0, 0, 0.8)" }}
-        animate={{ opacity: [1, 0.5, 1] }}
-        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-    >
-        SCROLL DOWN
-    </motion.span>
-    <motion.img 
-        src={arrowDownVideo} 
-        alt="Scroll Down" 
-        className="w-16 h-16 object-contain mt-2 filter invert transition-transform duration-300 group-hover:scale-110"
-        animate={{
-            y: [0, 30],
-            opacity: [1, 0],
-        }}
-        transition={{
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 1.5,
-            ease: "easeInOut",
-        }}
-    />
-</motion.div>
+                    className="absolute top-60 right-4 flex flex-col items-center justify-center space-y-2 cursor-pointer text-white z-20 group"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+                >
+                <motion.span 
+                    className="text-sm md:text-base font-light italic tracking-[0.35em] transform -rotate-90 origin-center mb-20 text-white group-hover:text-gray-300 transition-colors duration-300" 
+                    style={{ textShadow: "2px 2px 3px rgba(0, 0, 0, 0.8)" }}                    
+                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                >
+                    SCROLL DOWN
+                </motion.span>
+                <motion.img 
+                    src={arrowDownVideo} 
+                    alt="Scroll Down" 
+                    className="w-16 h-16 object-contain mt-2 transition-transform duration-300 group-hover:scale-110"
+                    animate={{
+                        y: [0, 30],
+                        opacity: [1, 0.2, 1],
+                    }}
+                    transition={{
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        duration: 1.5,
+                        ease: "easeInOut",
+                    }}
+                />
+                </motion.div>
             </section>
             <section id="home-about" className="relative overflow-hidden">
                 <div className="container mx-auto py-16 px-4">
@@ -246,7 +264,7 @@ function Home() {
                             backgroundPosition: category.id === "01" ? "center 70%" :
                             category.id === "02" ? "center 78%" :
                             category.id === "03" ? "center 70%" :
-                            category.id === "04" ? "center 70%" :
+                            category.id === "04" ? "center 50%" :
                             category.id === "05" ? "center 75%" : "center",
                         }}>
                         </div>
@@ -258,16 +276,31 @@ function Home() {
                                     key={category.id}
                                     href={category.url}
                                     onMouseEnter={() => setActiveRoom(category.id)}
-                                    className={`text-lg md:text-xl font-semibold cursor-pointer transition-colors duration-300 ${activeRoom === category.id ? "text-primary" : "text-gray-900"}`}
+                                    className={`text-lg md:text-xl font-bold italic cursor-pointer transition-colors duration-300 ${activeRoom === category.id ? "text-primary" : "text-gray-900"}`}
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.3 }}
-                                >
+                                    style={{
+                                        fontFamily: 'Playfair Display',
+                                        textShadow: '2px 4px 6px rgba(0,0,0,0.99)'
+                                    }}>                                
                                     {category.name}
                                 </motion.a>
                             ))}
                         </div>
-                    </div>
+                    </div>                    
+                </div>
+            </section>
+            <section className="relative w-screen h-[120vh] mt-16 mb-16 overflow-hidden">
+                <img src={Estar} alt="Sala de estar" className="w-full h-full object-cover" />
+                <div className="absolute -bottom-3/4 inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                    <h2 className="text-white text-lg font-light italic tracking-wide" 
+                        style={{
+                            fontFamily: 'Playfair Display',
+                            textShadow: '2px 4px 6px rgba(0,0,0,0.99)'
+                        }}>
+                        Explora nuestros diseños
+                    </h2>
                 </div>
             </section>
         </Layout>

@@ -5,7 +5,7 @@ import Home from 'containers/pages/Home';
 import Error404 from 'containers/errors/Error404';
 import Points from 'containers/pages/Points';
 import About from 'containers/pages/About';
-import Distributors from 'containers/pages/Distributors';
+import Products from 'containers/pages/Products';
 import Contact from 'containers/pages/Contact';
 import Partners from 'containers/pages/Partners';
 
@@ -24,7 +24,7 @@ function App() {
         {/* Other Routes */}
         <Route path='/puntos-de-venta' element={<Points />} />
         <Route path='/sobre-nosotros' element={<About />} />
-        <Route path='/distribuidores' element={<Distributors />} />
+        <Route path='/productos' element={<Products />} />
         <Route path='/contacto' element={<Contact />} />
         <Route path='/portal-de-socios' element={<Partners />} />
         {/* <Route path='/about' element={<About />} /> */}

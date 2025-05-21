@@ -92,7 +92,7 @@ function Footer() {
                 <div>
                     <h2 className="text-lg font-semibold mb-4">Hoja informativa</h2>
                     <p className="text-sm text-gray-800 mb-4">{navigation.newsletter.text}</p>
-                    <a href={navigation.newsletter.subscribeHref} className="button inline-block bg-black text-white px-16 py-2 rounded transition-transform duration-200 hover:scale-[1.03] ">
+                    <a href={navigation.newsletter.subscribeHref} className="button inline-blocktext-base font-bold border-2 border-black rounded px-14 py-3 transition-all duration-300 hover:bg-black hover:text-white hover:shadow-lg hover:scale-105">
                         Suscribir
                     </a>
                     <div className="flex gap-4 mt-5">

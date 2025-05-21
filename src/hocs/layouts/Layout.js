@@ -1,6 +1,8 @@
 import Navbar from 'components/navegation/Navbar';
 import Footer from 'components/navegation/Footer'; // Ajustá la ruta si no es correcta
 import { connect } from 'react-redux';
+import "@fontsource/playfair-display/400.css";
+
 
 
 function Layout({ children }) {
