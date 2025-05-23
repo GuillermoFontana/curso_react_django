@@ -22,7 +22,7 @@ const navigation = {
         { name: "Política de privacidad", href: "/privacy-policy" },
     ],
     professionals: [
-        { name: "Distribuidores", href: "/distribuidores" },
+        { name: "Productos", href: "/productos" },
         { name: "Galería de diseños", href: "/galeria-de-diseños" },
         { name: "Kit de prensa", href: "/kit-de-prensa" },
         { name: "Exposiciones", href: "/exposiciones" },

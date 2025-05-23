@@ -1,14 +1,14 @@
 import Layout from "hocs/layouts/Layout";
 
-function Distributors() {
+function Products() {
     return (
     <Layout>
         
         <div className= "pt-28">
-            <h1>Distribuidores!</h1>
+            <h1>Productos</h1>
         </div>
         
     </Layout>
     );
 }
-export default Distributors;
+export default Products;

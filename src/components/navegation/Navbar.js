@@ -35,7 +35,7 @@ function Navbar() {
                             onMouseLeave={() => setIsOpen(false)}
                         >
                             <NavLink
-                                to=""
+                                href="#home-room-categories"
                                 className="text-sm text-neutral-700 hover:text-black transition-transform duration-200 hover:scale-[1.03] inline-block"
                             >
                                 Productos
