@@ -7,7 +7,7 @@ import Points from 'containers/pages/Points';
 import About from 'containers/pages/About';
 import Products from 'containers/pages/Products';
 import Contact from 'containers/pages/Contact';
-import Partners from 'containers/pages/Partners';
+import Login from 'containers/pages/Login';
 
 function App() {
   return (
@@ -23,10 +23,10 @@ function App() {
 
         {/* Other Routes */}
         <Route path='/puntos-de-venta' element={<Points />} />
-        <Route path='/sobre-nosotros' element={<About />} />
+        <Route path='/nosotros' element={<About />} />
         <Route path='/productos' element={<Products />} />
         <Route path='/contacto' element={<Contact />} />
-        <Route path='/portal-de-socios' element={<Partners />} />
+        <Route path='/login' element={<Login />} />
         {/* <Route path='/about' element={<About />} /> */}
         {/* <Route path='/contact' element={<Contact />} /> */}
       </Routes>

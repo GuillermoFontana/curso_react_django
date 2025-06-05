@@ -1,14 +1,14 @@
 import Layout from "hocs/layouts/Layout";
 
-function Partners() {
+function Login() {
     return (
     <Layout>
         
         <div className= "pt-28">
-            <h1>Socios!</h1>
+            <h1>Login!</h1>
         </div>
         
     </Layout>
     );
 }
-export default Partners;
+export default Login;

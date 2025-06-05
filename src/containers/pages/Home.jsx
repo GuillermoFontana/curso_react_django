@@ -62,14 +62,14 @@ function Home() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
                         <h2 
-                        className="text-sm font-light italic tracking-[0.3em]" 
+                        className="text-sm tracking-[0.3em]" 
                         style={{
                             fontFamily: 'Playfair Display',
                             textShadow: '2px 4px 6px rgba(0,0,0,0.99)'
                         }}>
                             AUTÉNTICO LUJO
                         </h2>
-                        <h1 className="text-6xl font-light italic tracking-[0.3em]" style={{ fontFamily: 'Playfair Display', textShadow: '2px 4px 6px rgba(0,0,0,0.99)'}}>
+                        <h1 className="text-6xl tracking-[0.3em]" style={{ fontFamily: 'Playfair Display', textShadow: '2px 4px 6px rgba(0,0,0,0.99)'}}>
                             PIEZAS MAESTRAS
                         </h1>
                     </motion.div>
@@ -276,7 +276,7 @@ function Home() {
                                     key={category.id}
                                     href={category.url}
                                     onMouseEnter={() => setActiveRoom(category.id)}
-                                    className={`text-lg md:text-xl font-bold italic cursor-pointer transition-colors duration-300 ${activeRoom === category.id ? "text-primary" : "text-gray-900"}`}
+                                    className={`text-lg md:text-xl font-bold cursor-pointer transition-colors duration-300 ${activeRoom === category.id ? "text-primary" : "text-gray-900"}`}
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.3 }}

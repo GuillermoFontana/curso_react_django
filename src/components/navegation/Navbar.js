@@ -1,211 +1,239 @@
 import { connect } from "react-redux";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link} from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { Menu, X, Search } from "lucide-react";
+// Navbar completo al estilo Ethnicraft con buscador fullscreen
+const mockResults = [
+  "Mesa de centro",
+  "Sofá Classic",
+  "Lámpara de pie",
+  "Silla Outdoor",
+  "Biblioteca moderna",
+  "Mesa de comedor",
+  "Cómoda vintage",
+  "Alfombra natural",
+];
 
-function Navbar() {
+
+function MegaMenu({ title, categories }) {
     const [isOpen, setIsOpen] = useState(false);
-
+    const menuRef = useRef();
+  
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (menuRef.current && !menuRef.current.contains(event.target)) {
+          setIsOpen(false);
+        }
+      };
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+  
     return (
-        <nav className="w-full py-2 fixed z-50" style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-                <div className="flex items-center justify-between">
-                    {/* Logo */}
-                    <div className="flex-shrink-0">
-                        <Link to="/">
-                            <img
-                                src="https://media.ethnicraft.com/sys-master/s3_content_medias/h32/hec/8796120580126/Logo-Ethnicraft-RGB-Black.svg"
-                                alt="Logo"
-                                width={120}
-                                height={40}
-                                className="object-contain" 
-                            />
-                        </Link>
-                    </div>
-
-                    {/* Enlaces de navegación */}
-                    <div className="hidden md:flex items-center space-x-6">
-                        <NavLink to="/puntos-de-venta" className="text-sm text-gray-700 hover:text-black transition-transform duration-200 hover:scale-[1.03] inline-block">Puntos de venta</NavLink>
-                        <NavLink to="/sobre-nosotros" className="text-sm text-gray-700 hover:text-black transition-transform duration-200 hover:scale-[1.03] inline-block">Sobre nosotros</NavLink>
-                        
-                        {/* Menú desplegable para Productos */}
-                        <div
-                            className="relative group"
-                            onMouseEnter={() => setIsOpen(true)}
-                            onMouseLeave={() => setIsOpen(false)}
-                        >
-                            <NavLink
-                                href="#home-room-categories"
-                                className="text-sm text-neutral-700 hover:text-black transition-transform duration-200 hover:scale-[1.03] inline-block"
-                            >
-                                Productos
-                            </NavLink>                          
-                            <AnimatePresence>
-                            {isOpen && (
-                                <motion.div
-                                initial={{ opacity: 0, y: -10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -10 }}
-                                style={{ backgroundColor: 'rgba(255, 255, 255, 0.9)'}}
-                                className="absolute right-0.5 -translate-x-1/2 mt-4 bg-white shadow-xl overflow-hidden w-[720px] p-8 z-50 border border-gray-100"
-                                >
-                                    <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8">                                        
-                                        {/* Dormitorio */}
-                                        <div>
-                                            <h3 className="text-base font-semibold text-neutral-800 mb-3">Dormitorio</h3>
-                                            <ul className="space-y-2">
-                                                <li>
-                                                    <NavLink
-                                                    to="/productos/dormitorio/mesas-de-luz"
-                                                    className="text-sm text-neutral-600 hover:text-black transition-colors"
-                                                    >
-                                                    Mesa de luz
-                                                    </NavLink>
-                                                </li>
-                                                <li>
-                                                    <NavLink
-                                                    to="/productos/dormitorio/mesas-de-luz"
-                                                    className="text-sm text-neutral-600 hover:text-black transition-colors"
-                                                    >
-                                                    Cómoda
-                                                    </NavLink>
-                                                </li>
-                                                <li>
-                                                    <NavLink
-                                                    to="/productos/dormitorio/respaldo"
-                                                    className="text-sm text-neutral-600 hover:text-black transition-colors"
-                                                    >
-                                                    Respaldo
-                                                    </NavLink>
-                                                </li>                                                
-                                                <li>
-                                                    <NavLink
-                                                    to="/productos/dormitorio/taburete"
-                                                    className="text-sm text-neutral-600 hover:text-black transition-colors"
-                                                    >
-                                                    Taburete
-                                                    </NavLink>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        {/* Living */}
-                                        <div>
-                                            <h3 className="text-base font-semibold text-neutral-800 mb-3">Living</h3>
-                                            <ul className="space-y-2">
-                                                <li>
-                                                    <NavLink
-                                                    to="/productos/living/sofa"
-                                                    className="text-sm text-neutral-600 hover:text-black transition-colors"
-                                                    >
-                                                    Sofá
-                                                    </NavLink>
-                                                </li>
-                                                <li>
-                                                    <NavLink
-                                                    to="/productos/living/mesa"
-                                                    className="text-sm text-neutral-600 hover:text-black transition-colors"
-                                                    >
-                                                    Mesa de Living
-                                                    </NavLink>
-                                                </li>
-                                                <li>
-                                                    <NavLink
-                                                    to="/productos/living/biblioteca"
-                                                    className="text-sm text-neutral-600 hover:text-black transition-colors"
-                                                    >
-                                                    Biblioteca
-                                                    </NavLink>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        {/* Comedor */}
-                                        <div>
-                                            <h3 className="text-base font-semibold text-neutral-800 mb-3">Comedor</h3>
-                                            <ul className="space-y-2">
-                                                <li>
-                                                    <NavLink
-                                                    to="/productos/comedor/mesa"
-                                                    className="text-sm text-neutral-600 hover:text-black transition-colors"
-                                                    >
-                                                    Mesa
-                                                    </NavLink>
-                                                </li>
-                                                <li>
-                                                    <NavLink
-                                                    to="/productos/comedor/silla"
-                                                    className="text-sm text-neutral-600 hover:text-black transition-colors"
-                                                    >
-                                                    Silla
-                                                    </NavLink>
-                                                </li>
-                                            </ul>
-                                        </div>                            
-                                        {/* Estudio */}
-                                        <div>
-                                            <h3 className="text-base font-semibold text-neutral-800 mb-3">Estudio</h3>
-                                            <ul className="space-y-2">
-                                                <li>
-                                                    <NavLink
-                                                    to="/productos/estudio/escritorios"
-                                                    className="text-sm text-neutral-600 hover:text-black transition-colors"
-                                                    >
-                                                    Escritorios
-                                                    </NavLink>
-                                                </li>
-                                                <li>
-                                                    <NavLink
-                                                    to="/productos/estudio/bibliotecas"
-                                                    className="text-sm text-neutral-600 hover:text-black transition-colors"
-                                                    >
-                                                    Bibliotecas
-                                                    </NavLink>
-                                                </li>
-                                            </ul>
-                                        </div>                              
-                                        {/* Outdoor */}
-                                        <div>
-                                            <h3 className="text-base font-semibold text-neutral-800 mb-3">Outdoor</h3>
-                                            <ul className="space-y-2">
-                                                <li>
-                                                    <NavLink
-                                                    to="/productos/outdoor/sillas"
-                                                    className="text-sm text-neutral-600 hover:text-black transition-colors"
-                                                    >
-                                                    Sillas / Sillones / Banco
-                                                    </NavLink>
-                                                </li>
-                                                <li>
-                                                    <NavLink
-                                                    to="/productos/outdoor/mesa"
-                                                    className="text-sm text-neutral-600 hover:text-black transition-colors"
-                                                    >
-                                                    Mesa
-                                                    </NavLink>
-                                                </li>
-                                                <li>
-                                                    <NavLink
-                                                    to="/productos/outdoor/mesa-de-centro"
-                                                    className="text-sm text-neutral-600 hover:text-black transition-colors"
-                                                    >
-                                                    Mesa de centro
-                                                    </NavLink>
-                                                </li>
-                                            </ul>
-                                        </div>                    
-                                    </div>
-                                </motion.div>
-                            )}
-                            </AnimatePresence>
-                        </div>
-                        <NavLink to="/contacto" className="text-sm text-gray-700 hover:text-black transition-transform duration-200 hover:scale-[1.03] inline-block">Contacto</NavLink>
-                        <NavLink to="/portal-de-socios" className="text-sm text-gray-700 hover:text-black transition-transform duration-200 hover:scale-[1.03] inline-block">Portal de Socios</NavLink>
-                    </div>
-                </div>
-            </div>
-        </nav>
+      <div className="relative" ref={menuRef}>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="text-gray-700 hover:text-black uppercase font-medium text-sm px-2 py-1"
+        >
+          {title}
+        </button>
+  
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+              className="absolute -left-96 top-9 w-screen bg-white shadow-2xl border-t mt-2 z-50"
+            >
+              <div className="max-w-screen-xl mx-auto grid grid-cols-4 gap-8 p-8">
+                {categories.map((cat, index) => (
+                  <div key={index}>
+                    <h4 className="text-sm font-semibold text-gray-800 mb-2">
+                      {cat.title}
+                    </h4>
+                    <ul className="space-y-1">
+                      {cat.items.map((item, i) => (
+                        <li key={i}>
+                          <a
+                            href="#"
+                            className="text-sm text-gray-600 hover:text-black transition"
+                          >
+                            {item}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     );
+  }
+
+
+function SearchModal({ isOpen, onClose }) {
+  const [query, setQuery] = useState("");
+  const [filteredResults, setFilteredResults] = useState([]);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      setQuery("");
+      setFilteredResults([]);
+      setTimeout(() => inputRef.current?.focus(), 100);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (query.trim() === "") {
+      setFilteredResults([]);
+    } else {
+      const results = mockResults.filter((item) =>
+        item.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilteredResults(results);
+    }
+  }, [query]);
+
+  useEffect(() => {
+    function onKeyDown(e) {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    }
+    if (isOpen) {
+      window.addEventListener("keydown", onKeyDown);
+      return () => window.removeEventListener("keydown", onKeyDown);
+    }
+  }, [isOpen, onClose]);
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+          />
+
+          <motion.div
+            className="fixed inset-0 flex justify-center items-center px-4 z-50"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1, transition: { delay: 0.1 } }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="bg-white rounded-lg shadow-lg w-full max-w-xl p-6 relative">
+              <button
+                className="absolute top-1 right-1 text-gray-600 hover:text-black"
+                onClick={onClose}
+                aria-label="Cerrar búsqueda"
+              >
+                <X className="w-6 h-6" />
+              </button>
+              <input
+                type="text"
+                ref={inputRef}
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Buscar productos, colecciones..."
+                className="w-full border border-gray-300 rounded-md px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-black"
+              />
+              {filteredResults.length > 0 && (
+                <ul className="mt-4 max-h-64 overflow-y-auto border border-gray-200 rounded-md shadow-sm">
+                  {filteredResults.map((item, index) => (
+                    <li
+                      key={index}
+                      className="px-4 py-3 cursor-pointer hover:bg-gray-100 text-gray-800"
+                      onClick={() => {
+                        alert(`Elegiste: ${item}`);
+                        onClose();
+                      }}
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {query && filteredResults.length === 0 && (
+                <p className="mt-4 text-center text-gray-500">No se encontraron resultados.</p>
+              )}
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
+  );
 }
 
-const mapStateToProps = state => ({});
+function Navbar() {
+  const [searchOpen, setSearchOpen] = useState(false);
 
+  return (
+    <>
+      <header className="sticky top-0 bg-white shadow z-40">
+        <NavLink className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <Link className="text-xl font-playfair tracking-tight" to="/">Boldcraft Design</Link>
+
+        <div className="hidden md:flex space-x-6 items-center">
+        <MegaMenu
+  title="Indoor"
+  categories={[
+    { title: "Living", items: ["Sofás", "Mesas ratonas", "Estanterías"] },
+    { title: "Comedor", items: ["Mesas", "Sillas", "Aparadores"] },
+    { title: "Dormitorio", items: ["Camas", "Mesas de luz", "Cómodas"] },
+    { title: "Oficina", items: ["Escritorios", "Sillas", "Bibliotecas"] },
+  ]}
+/>
+<MegaMenu
+  title="Outdoor"
+  categories={[
+    { title: "Exterior", items: ["Sillones", "Mesas", "Reposeras"] },
+    { title: "Accesorios", items: ["Macetas", "Alfombras", "Iluminación"] },
+  ]}
+/>
+<Link to="/nosotros" className="text-gray-700 hover:text-black text-sm uppercase font-medium">
+  Nosotros
+</Link>
+<Link to="/contacto" className="text-gray-700 hover:text-black text-sm uppercase font-medium">
+  Contacto
+</Link>
+<Link to="/login" className="text-gray-700 hover:text-black text-sm uppercase font-medium">
+  Login
+</Link>
+</div>
+
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setSearchOpen(true)}
+              className="text-gray-700 hover:text-black"
+              aria-label="Abrir búsqueda"
+            >
+              <Search className="w-5 h-5" />
+            </button>
+
+            <button className="md:hidden">
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
+        </NavLink>
+      </header>
+
+      <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
+    </>
+  );
+}
+
+const mapStateToProps = (state) => ({});
 export default connect(mapStateToProps)(Navbar);

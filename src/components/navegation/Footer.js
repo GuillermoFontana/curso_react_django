@@ -5,6 +5,7 @@ import instagram from "../../assets/icons/instagram.png";
 import pinterest from "../../assets/icons/pinterest.png";
 import youtube from "../../assets/icons/youtube.png";
 import tiktok from "../../assets/icons/tiktok.png";
+import { Link } from "react-router-dom";
 
 const navigation = {
     company: [
@@ -22,14 +23,13 @@ const navigation = {
         { name: "Política de privacidad", href: "/privacy-policy" },
     ],
     professionals: [
-        { name: "Productos", href: "/productos" },
         { name: "Galería de diseños", href: "/galeria-de-diseños" },
         { name: "Kit de prensa", href: "/kit-de-prensa" },
         { name: "Exposiciones", href: "/exposiciones" },
     ],
     newsletter: {
         text: "Manténgase conectado para recibir actualizaciones, eventos especiales y lanzamientos.",
-        subscribeHref: "/portal-de-socios",
+        subscribeHref: "/login",
         social: [
             { name: "WhatsApp", href: "https://wa.me/5492213522513" },
             { name: "YouTube", href: "https://www.youtube.com/" },
@@ -93,7 +93,7 @@ function Footer() {
                     <h2 className="text-lg font-semibold mb-4">Hoja informativa</h2>
                     <p className="text-sm text-gray-800 mb-4">{navigation.newsletter.text}</p>
                     <a href={navigation.newsletter.subscribeHref} className="button inline-blocktext-base font-bold border-2 border-black rounded px-14 py-3 transition-all duration-300 hover:bg-black hover:text-white hover:shadow-lg hover:scale-105">
-                        Suscribir
+                        Login
                     </a>
                     <div className="flex gap-4 mt-5">
                         {navigation.newsletter.social.map((social, idx) => {
@@ -119,15 +119,15 @@ function Footer() {
             {/* Pie de página inferior */}
             <div className="footer__content-bottom pt-10 pb-12">
                 <div className="footer__bottom-info flex flex-col items-center justify-between px-4 sm:px-8">
-                    <div className="footer__bottom-info--logo mb-6">
-                        <img
-                            src="//audocph.com/cdn/shop/files/audo_logo_black.svg?v=1684929392&amp;width=70"
-                            alt="Audo Copenhague"
-                            width="70"
-                            height="27"
-                            loading="lazy"
-                        />
-                    </div>
+                <Link to="/" className="footer__bottom-info--logo mb-6 block">
+  <img
+    src="//audocph.com/cdn/shop/files/audo_logo_black.svg?v=1684929392&amp;width=70"
+    alt="Audo Copenhague"
+    width="70"
+    height="27"
+    loading="lazy"
+  />
+</Link>
                     <div className="footer__bottom-info--text text-xs text-center text-gray-600 ">
                         <div>
                             Bold-craft Design S.A., La Plata, Buenos Aires, Argentina<br />
