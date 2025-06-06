@@ -1,4 +1,8 @@
 import Layout from "hocs/layouts/Layout";
+import Equipo from "assets/img/about_equipo.jpg";
+import Historia from "assets/img/about_historia.jpg";
+import Socios from "assets/img/about_alianzas.jpg";
+
 
 function About() {
   return (
@@ -41,26 +45,58 @@ function About() {
           y ese hogar, en parte de tu historia.
         </p>
 
-        <div className="flex justify-center space-x-4">
-          <a
-            href="/nuestra-historia"
-            className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition"
-          >
-            Conocé nuestra historia
-          </a>
-          <a
-            href="/nuestro-equipo"
-            className="bg-white text-black border border-black px-4 py-2 rounded hover:bg-gray-100 transition"
-          >
-            Nuestro equipo
-          </a>
-          <a
-            href="/compromiso-animalista"
-            className="bg-white text-black border border-black px-4 py-2 rounded hover:bg-gray-100 transition"
-          >
-            Compromiso animalista
-          </a>
-        </div>
+        <div className="flex justify-center space-x-8">
+  {/* Botón 1 */}
+  <a
+    href="/nuestra-historia"
+    className="group flex flex-col items-center bg-white text-black border rounded-xl overflow-hidden hover:bg-gray-100 transition-transform transform hover:scale-105 hover:shadow-lg w-60"
+  >
+    <div className="w-full h-80 overflow-hidden">
+      <img
+        src={Historia}
+        alt="Historia"
+        className="w-full h-full object-cover object-[30%_center] transition-transform duration-300 group-hover:scale-105"
+      />
+    </div>
+    <div className="py-4 px-2 text-center">
+      <span className="text-base font-medium">Conocé nuestra historia</span>
+    </div>
+  </a>
+
+  {/* Botón 2 */}
+  <a
+    href="/nuestro-equipo"
+    className="group flex flex-col items-center bg-white text-black border rounded-xl overflow-hidden hover:bg-gray-100 transition-transform transform hover:scale-105 hover:shadow-lg w-60"
+  >
+    <div className="w-full h-80 overflow-hidden">
+      <img
+        src={Equipo}
+        alt="Equipo"
+        className="w-full h-full object-cover object-[35%_center] transition-transform duration-300 group-hover:scale-105"
+      />
+    </div>
+    <div className="py-4 px-2 text-center">
+      <span className="text-base font-medium">Nuestro equipo</span>
+    </div>
+  </a>
+
+  {/* Botón 3 */}
+  <a
+    href="/socios"
+    className="group flex flex-col items-center bg-white text-black border rounded-xl overflow-hidden hover:bg-gray-100 transition-transform transform hover:scale-105 hover:shadow-lg w-60"
+  >
+    <div className="w-full h-80 overflow-hidden">
+      <img
+        src={Socios}
+        alt="Socios"
+        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+      />
+    </div>
+    <div className="py-4 px-2 text-center">
+      <span className="text-base font-medium">Nuestros Socios</span>
+    </div>
+  </a>
+</div>
       </div>
     </Layout>
   );
