@@ -209,9 +209,6 @@ function Navbar() {
 <Link to="/contacto" className="text-gray-700 hover:text-black text-sm uppercase font-medium">
   Contacto
 </Link>
-<Link to="/login" className="text-gray-700 hover:text-black text-sm uppercase font-medium">
-  Login
-</Link>
 </div>
 
           <div className="flex items-center gap-4">

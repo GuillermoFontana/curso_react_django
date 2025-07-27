@@ -29,7 +29,6 @@ const navigation = {
     ],
     newsletter: {
         text: "Manténgase conectado para recibir actualizaciones, eventos especiales y lanzamientos.",
-        subscribeHref: "/login",
         social: [
             { name: "WhatsApp", href: "https://wa.me/5492213522513" },
             { name: "YouTube", href: "https://www.youtube.com/" },
@@ -90,11 +89,8 @@ function Footer() {
 
                 {/* Sección: Newsletter + redes */}
                 <div>
-                    <h2 className="text-lg font-semibold mb-4">Hoja informativa</h2>
-                    <p className="text-sm text-gray-800 mb-4">{navigation.newsletter.text}</p>
-                    <a href={navigation.newsletter.subscribeHref} className="button inline-blocktext-base font-bold border-2 border-black rounded px-14 py-3 transition-all duration-300 hover:bg-black hover:text-white hover:shadow-lg hover:scale-105">
-                        Login
-                    </a>
+                    <h2 className="text-lg font-semibold mb-4">Social</h2>
+                    <p className="text-sm text-gray-800 mb-4">{navigation.newsletter.text}</p>                   
                     <div className="flex gap-4 mt-5">
                         {navigation.newsletter.social.map((social, idx) => {
                             let icon;
